@@ -59,5 +59,17 @@ class LaserDodger(QWidget):
         x = random.randint(10, WIDTH - LASER_WIDTH - 10)
         self.lasers.append(QRect(x, 10, LASER_WIDTH, LASER_HEIGHT))
 
+    def update_game(self):
+        """Move lasers down and check collisions"""
+        for laser in self.lasers:
+            laser.moveTop(laser.top() + LASER_SPEED)
+
+        # Check collision
+        if self.check_collision():
+            self.game_over()
+
+        self.update()
+
+
 
 

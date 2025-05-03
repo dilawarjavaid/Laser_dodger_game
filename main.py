@@ -85,6 +85,13 @@ class LaserDodger(QWidget):
         self.game_over_label.setVisible(True)
 
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    game = LaserDodger()
+    game.show()
+    sys.exit(app.exec())
+
+
 
 
 

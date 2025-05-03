@@ -70,6 +70,15 @@ class LaserDodger(QWidget):
 
         self.update()
 
+    def check_collision(self):
+        """Detect if a laser hits the player"""
+        player_rect = QRect(self.player_x, self.player_y, PLAYER_SIZE, PLAYER_SIZE)
+        for laser in self.lasers:
+            if player_rect.intersects(laser):
+                return True
+        return False
+
+
 
 
 

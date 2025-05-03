@@ -17,3 +17,8 @@ class LaserDodger(QWidget):
         self.setWindowTitle("Laser Dodger")
         self.setFixedSize(WIDTH, HEIGHT)
         self.setStyleSheet("background-color: black;")
+
+        self.player_x = WIDTH // 2 - PLAYER_SIZE // 2
+        self.player_y = HEIGHT - 60
+        self.lasers = []
+

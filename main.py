@@ -46,4 +46,13 @@ class LaserDodger(QWidget):
             painter.drawRect(laser)
 
 
+    def keyPressEvent(self, event):
+        """Move player with arrow keys"""
+        if event.key() == Qt.Key.Key_Left and self.player_x > 10:
+            self.player_x -= 20
+        elif event.key() == Qt.Key.Key_Right and self.player_x < WIDTH - PLAYER_SIZE - 10:
+            self.player_x += 20
+        self.update()
+
+
 

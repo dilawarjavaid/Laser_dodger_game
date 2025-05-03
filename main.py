@@ -27,6 +27,10 @@ class LaserDodger(QWidget):
         self.laser_timer = QTimer(self)
         self.laser_timer.timeout.connect(self.spawn_laser)
         self.laser_timer.start(LASER_INTERVAL)
+        self.move_timer = QTimer(self)
+        self.move_timer.timeout.connect(self.update_game)
+        self.move_timer.start(50)
+
 
 
 

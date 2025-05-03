@@ -78,6 +78,12 @@ class LaserDodger(QWidget):
                 return True
         return False
 
+    def game_over(self):
+        """End the game"""
+        self.laser_timer.stop()
+        self.move_timer.stop()
+        self.game_over_label.setVisible(True)
+
 
 
 

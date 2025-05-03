@@ -17,8 +17,12 @@ class LaserDodger(QWidget):
         self.setWindowTitle("Laser Dodger")
         self.setFixedSize(WIDTH, HEIGHT)
         self.setStyleSheet("background-color: black;")
-
         self.player_x = WIDTH // 2 - PLAYER_SIZE // 2
         self.player_y = HEIGHT - 60
         self.lasers = []
+        self.game_over_label = QLabel("GAME OVER", self)
+        self.game_over_label.setStyleSheet("color: white; font-size: 24px; font-weight: bold;")
+        self.game_over_label.setGeometry(WIDTH // 2 - 70, HEIGHT // 2 - 20, 140, 40)
+        self.game_over_label.setVisible(False)
+
 

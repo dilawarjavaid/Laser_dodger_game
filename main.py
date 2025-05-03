@@ -54,5 +54,10 @@ class LaserDodger(QWidget):
             self.player_x += 20
         self.update()
 
+    def spawn_laser(self):
+        """Create a new falling laser"""
+        x = random.randint(10, WIDTH - LASER_WIDTH - 10)
+        self.lasers.append(QRect(x, 10, LASER_WIDTH, LASER_HEIGHT))
+
 
 

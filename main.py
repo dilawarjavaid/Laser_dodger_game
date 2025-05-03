@@ -31,6 +31,19 @@ class LaserDodger(QWidget):
         self.move_timer.timeout.connect(self.update_game)
         self.move_timer.start(50)
 
+    def paintEvent(self, event):
+        """Draw player and lasers"""
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+
+        # Draw player (green circle)
+        painter.setBrush(QColor(0, 255, 0))
+        painter.drawEllipse(self.player_x, self.player_y, PLAYER_SIZE, PLAYER_SIZE)
+
+        # Draw lasers (red rectangles)
+        painter.setBrush(QColor(255, 0, 0))
+        for laser in self.lasers:
+            painter.drawRect(laser)
 
 
 
